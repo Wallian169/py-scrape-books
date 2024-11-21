@@ -41,9 +41,6 @@ class BooksSpider(scrapy.Spider):
         detail_page = book.css("a::attr(href)").get()
         detail_page = response.urljoin(detail_page)
         self.driver.get(detail_page)
-
-        self.driver.get(detail_page)
-
         html = self.driver.page_source
         detail_selector = Selector(text=html)
 
